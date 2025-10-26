@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { DynamicFavicon } from "@/components/DynamicFavicon";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,8 +15,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Anonyme Fragen - Prof Q&A",
-  description: "Stelle deinem Professor anonyme Fragen",
+  title: "Anonyme Fragen - Tutorium Q&A",
+  description: "Stelle deinem Tutor anonyme Fragen",
+  icons: {
+    icon: [
+      { url: '/RVlogo-lightmode.png', media: '(prefers-color-scheme: light)' },
+      { url: '/RVlogo-darkmode.png', media: '(prefers-color-scheme: dark)' },
+    ],
+    apple: [
+      { url: '/RVlogo-lightmode.png', media: '(prefers-color-scheme: light)' },
+      { url: '/RVlogo-darkmode.png', media: '(prefers-color-scheme: dark)' },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -34,6 +45,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
+          <DynamicFavicon />
           {children}
         </ThemeProvider>
       </body>
