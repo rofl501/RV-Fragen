@@ -269,7 +269,13 @@ export default function ProfessorQA() {
   const taglines = [
     '„Keine Frage ist zu klein.“ ~wahrscheinlich ein Mensch irgendwann mal',
     '"Ibuprofen"',
-    '„67% der Studenten fragen nicht. Sei anders." ~Nicht ausgedachte Statistik'
+    '„67% der Studierende fragen nicht. Sei anders." ~Nicht ausgedachte Statistik'
+    'Der, die, das Wer, wie, was Wieso weshalb warum? Wer nicht fragt bleibt dumm'
+    'Ist das alles prüfungsrelevant?'
+    'trivial'
+    'Rofl501 - making tutorial sessions easy since 2025'
+    'Turning coffee into wron exam answers'
+    'Fueled by Mate'
   ];
 
   useEffect(() => {
