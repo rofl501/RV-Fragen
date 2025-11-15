@@ -274,7 +274,7 @@ export default function ProfessorQA() {
     'Ist das alles prüfungsrelevant?'
     'trivial'
     'Rofl501 - making tutorial sessions easy since 2025'
-    'Turning coffee into wron exam answers'
+    'Turning coffee into wrong exam answers'
     'Fueled by Mate'
   ];
 
