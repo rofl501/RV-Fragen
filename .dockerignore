@@ -48,3 +48,7 @@ LICENSE
 
 # Data directory (will be created at runtime)
 data/
+
+# Secrets (mounted as Docker secrets, should not be in image)
+secrets/*.txt
+secrets/*.txt.example
