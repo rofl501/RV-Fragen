@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yamiseum-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    secrets:
+      - jwt_secret
+      - admin_username
+      - admin_password_hash_base64
+    volumes:
+      # Persistente Daten (Fragen und Rate Limits)
+      - ./data:/app/data
+      # Optional: Logos und andere statische Assets
+      - ./public:/app/public
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+secrets:
+  jwt_secret:
+    file: ./secrets/jwt_secret.txt
+  admin_username:
+    file: ./secrets/admin_username.txt
+  admin_password_hash_base64:
+    file: ./secrets/admin_password_hash_base64.txt
