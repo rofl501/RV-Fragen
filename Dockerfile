@@ -1,5 +1,6 @@
 # Multi-stage build für optimierte Image-Größe
-FROM node:20-alpine AS base
+# Verwende die neueste Node.js 22 Version für React2Shell Fix
+FROM node:22-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
